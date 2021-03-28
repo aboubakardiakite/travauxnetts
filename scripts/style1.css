@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,500,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,500,900');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+
+}
+body{
+    font-family: 'Lato';
+    background-color:#ffffff;
+    margin:0;
+    overflow-x: hidden;
+}
+
+main{
+    width: 100%;
+    margin: auto;
+}
+.diapo{
+    position: relative;
+    overflow: hidden;
+    
+    
+}
+.image{
+    width: 80%;
+    height: 700px;
+}
+/* #nav-droite, #nav-gauche{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    color: rgb(163, 27, 27);
+    font-size: 3em;
+}
+#nav-droite{
+    right: 20px;
+}
+#nav-gauche{
+    left: 20px;
+} */
+
+.elements{
+    display: flex;
+    position: relative;
+    transition: 1s linear;
+
+}
+
+.element{
+    flex: 1 0 100%;
+    position: relative;
+}
+
+.element > img{
+    width: 100%;
+}
+
+.caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255,255,255,0.4);
+    padding: 30px;
+}
+
+
+
+.FormulaireContact{
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    
+}
+.FormulaireContact input{
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    width: 15em;
+    height: 3em;
+    font-size: large;
+    
+
+}
+
+.w-100{
+    height: 500px;
+}
+
+
+#contactnon{
+    border: 1px solid black;
+    background: white;
+    box-shadow: 5px 5px 5px  gray;
+    border-radius: 5px;
+}
+
+.map-responsive{
+    position: relative;
+    height:500px;
+    width: 100%;
+    
+}
+
+.map-responsive iframe {
+    width:100%;
+    border-radius: 10px;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+}
+
+/*galerie photo*/
+
+#hr{
+    width: 70%;
+}
+
+
+.hov{
+    position: absolute;
+    top: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 350px;
+    height: 250px;
+    text-align: center;
+    color: white;
+}
+
+.contient{
+    margin-top: 20%;
+    transform: translateY(-100px);
+    transition-duration: 0.5px;
+}
+
+.content_hover{
+    margin-top: 20%;
+    transform: translateX(0);
+    transition-duration: 0.6px;
+}
+
+/***** grille **/
+#galé{
+    text-align: center;
+    margin: 50px 0;
+
+}
+.grille{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,300px);/*creé le nombre de colonne que nous voulons autand que la grille peut avec une taille de 300px*/
+    justify-content: center;
+    grid-gap: 10px; /* mettre de l'espace entre les grille*/
+}
+
+
+
+
+.imgGalerie{
+    width: 300px;
+    height: 200px;
+}
+
+/* menu*/
+
+.menu{
+    width: 100%;
+    height: 66px;
+    line-height: 60px;
+    background-color: rgb(5, 40, 194);
+    display: inherit;
+}
+
+nav{
+    position: fixed;
+    z-index: 99;
+}
+
+.logo{
+    margin: 15px 0;padding: 0;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.menu-left{
+    float: left;
+
+}
+
+.menu-r{
+    float: right;
+}
+.img{
+    width:30px;
+    height: 30px;
+}
+.inner{
+    width: 80%;
+    margin: auto;
+}
+.nav-link{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+
+}
+.nav-link:hover{
+    color: white;
+    font-weight: bold;
+    border-color: white;
+}
+.m-nav-toggle
+{
+    width: 40px;
+    height: 66px;
+    display: none;
+    align-items: center;
+    float: right;
+}
+
+.m-toggle-icon{
+    content: "";
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background:#fff;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+
+}
+span.m-toggle-icon:before, span.m-toggle-icon:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background:#fff;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+span.m-toggle-icon:before{
+    top: 12px;
+}
+span.m-toggle-icon:after{
+    top: -12px;
+}
+.menu-r.is-open{
+    transform: translateX(0);
+}
+.m-nav-toggle.is-open span.m-toggle-icon{
+    background: transparent;
+    
+}
+.m-nav-toggle.is-open span.m-toggle-icon:before, .m-nav-toggle.is-open  span.m-toggle-icon:after{
+
+    transform-origin: center;
+    transform: rotate(45deg);
+    top: 0;
+}
+.m-nav-toggle.is-open  span.m-toggle-icon:after{
+    transform: rotate(-45deg);
+
+}
+
+@media only screen and (max-width: 1066px) and (min-width: 200px){
+  
+  .menu-r{
+        position: absolute;
+        top: 66px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgb(5, 40, 194);
+        transform: translateY(-100%);
+        transition: all 0.3s ease-in-out;
+        display: none;
+
+    }
+
+    .m-nav-toggle
+    {
+        display: flex;
+    }
+    .m-toggle-icon{
+        display : block;
+        width:100px;
+    }
+    .logo
+    {
+        font-size: 20px;
+    }
+
+    .img{
+        width:20px;
+        height:20px;
+    }
+
+    .nav-link
+    {
+        /* margin-top: ; */
+        display: block;
+        text-align: center;
+        padding: 0;
+        height: 55px;
+        margin: auto;
+        width: 200px;
+
+    }
+    /* .modal-wrapper
+    {
+    overflow: auto; en cas de debordement un* scrolle apparait */
+    /* width: 100%;
+    height: 100%;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    padding:20px;
+    background-color: #fff;
+    animation: slideFrom .5s both .1s;
+
+    } */
+
+}
+@media  screen and (min-width: 961px) {
+  
+    .menu{
+        width: 100%;
+        height: 66px;
+        line-height: 60px;
+        background-color: rgb(5, 40, 194);
+        display: inherit;
+    }
+
+    .menu-r{
+        display: inherit;
+    }
+  
+}
+
+@media  screen and (max-width: 600px) {
+  
+    
+    .modal-wrapper
+      {
+      overflow: auto; /* en cas de debordement un* scrolle apparait */
+      width: 100%;
+      height: 100%;
+      max-width: calc(100% - 10px);
+      max-height: calc(100% - 10px);
+      padding:20px;
+      background-color: #fff;
+      animation: slideFrom .5s both .1s;
+  
+      }
+  
+}
+
+/*header*/
+header{
+    width: 100%;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    background: url("/image/img6.jpg") no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+.wrapper{
+    display: table;
+    width: 100%;
+    height: 100%;
+
+}
+.content{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.content h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    text-shadow: #0f0b08;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+
+.subtitle, .subtitle:hover, .subtitle:visited, .subtitle:active
+{
+    font-size: 23px;
+    color: white;
+	text-decoration:none;
+    background-color: #8CFF19;
+    border-radius: 15px;
+    margin-top: 30px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.subtitle:hover{
+    font-size: 25px;
+
+}
+
+
+/* nos chantier */
+.grille1{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,300px);/*creé le nombre de colonne que nous voulons autand que la grille peut avec une taille de 300px*/
+    justify-content: center;
+    grid-gap: 30px; /* mettre de l'espace entre les grille*/
+}
+
+.grille-item{
+    background-color: #ffffff;
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+}
+
+.imgGalerie1{
+    width: 299px;
+    height: 200px;
+    border-top-right-radius: 20px ;
+    border-top-left-radius: 20px ;
+
+}
+
+
+.grille-item1{
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+    border:  1px solid rgb(5, 40, 194) ;
+    background-color: #ffffffe3;
+
+}
+.grille-item1:hover{
+    box-shadow: 1px 1px 10px gray;
+}
+
+.grille1 .overlay:first-child
+
+{
+    margin-right: 20px;
+}
+
+.overlay h4, .overlay p
+{
+    border-bottom: 3px solid rgb(5, 40, 194);
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+.suress h4{
+    margin-bottom: 30px!important ;
+
+}
+.suress p{
+    margin-bottom: 30px;
+    padding-bottom: 50px!important;
+
+}
+
+.overlay a{
+    margin-top: 20px;
+}
+
+
+
+.grille1 p {
+
+    text-align: center;
+
+}
+
+.button-2
+{
+    color: #fff;
+    background-color: #0f0b08;
+    padding: 6px 20px;
+    border-radius: 3px;
+    margin-left: 30%;
+    margin-bottom: 10%;
+}
+
+.suress .button-2{
+    color: #fff;
+    background-color: #0f0b08;
+    padding: 6px 20px;
+    border-radius: 3px;
+    margin-left: 30%;
+    margin-bottom: 10%;
+}
+
+.button-2:hover
+{
+    color: #fff;
+    background-color: #02b8dd;
+}
+/* offre */
+.grille2{
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    margin: 0% auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,300px);/*creé le nombre de colonne que nous voulons autand que la grille peut avec une taille de 300px*/
+    justify-content: center;
+    grid-gap: 30px; /* mettre de l'espace entre les grille*/
+}
+
+
+.grille-item2{
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+    border:  1px solid rgb(5, 40, 194) ;
+    background-color: #ffffffe3;
+
+}
+
+.grille-item2:hover{
+    box-shadow: 1px 1px 10px gray;
+}
+
+
+.overlay p
+{
+    border-bottom: 3px solid rgb(5, 40, 194);
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.premier h4
+{
+    border-bottom: 3px solid rgb(5, 40, 194);
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+
+}
+.troisieme h4
+{
+    border-bottom: 3px solid rgb(5, 40, 194);
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 118px;
+    padding-top: 30px;
+    font-weight: bold;
+
+
+}
+.deuxieme h4
+{
+    border-bottom: 3px solid rgb(5, 40, 194);
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 118px;
+    padding-top: 30px;
+    font-weight: bold;
+
+
+}
+
+.premier #premier3,.deuxieme #deuxieme3,.troisieme #troisieme3{
+    border-bottom: none !important;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+/* collabor*/
+
+.grille3{
+    max-width: 900px;
+    width: 100%;
+    height: 500px;
+    margin: 0% auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,300px);/*creé le nombre de colonne que nous voulons autand que la grille peut avec une taille de 300px*/
+    justify-content: center;
+    grid-gap: 30px; /* mettre de l'espace entre les grille*/
+
+}
+
+
+.grille-item3{
+    width: 300px;
+    height: 100px;
+}
+.logoCallo{
+    margin-top: 50px;
+    width: 300px;
+    height: 100px;
+}
+/* modal */
+
+.modal
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    animation: fadeIn 2s both;
+}
+
+body, html
+{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.modal-wrapper
+{
+    overflow: auto; /* en cas de debordement un* scrolle apparait */
+    width: 100%;
+    height: 100%;
+    max-width: calc(100% - 100px);
+    max-height: calc(100% - 10px);
+    padding:20px;
+    background-color: #fff;
+    animation: slideFrom .5s both .1s;
+
+}
+
+.modal[aria-hidden="true"]
+{
+    animation-name: fadeOut;
+}
+
+.modal[aria-hidden="true"] .modal-wrapper
+{
+    animation-name: slideFrombottom;
+}
+.js-modal-close{
+    margin-right: 10px;
+    background-color: #ff0000;
+    width: 70px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+}
+@keyframes slideFrom{
+    from{transform:translateY(-50px);}
+    to {transform:translateY(0px);}
+}
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+
+}
+@keyframes slideFrombottom {
+    from{transform:translateY(0px);}
+    to {transform:translateY(50px);}
+}
+
+.present{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* delimiteur */
+/*  */
+.separe{
+    border-bottom: 3px solid rgb(5, 40, 194);
+    width: 50%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    height: 2;
+    margin-top: 100px;
+}
+
+/*button a*/
+
+aside a{
+    margin: 0;
+    padding: 0;
+}
+/* footer */
+.footer h2{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding-top: 120px;
+    font-size: 15px;
+} 
+
+.footer{
+    height: 200px;
+    background-color: rgb(5, 40, 194);
+    text-align: center;
+    margin-top: 50px;
+}
